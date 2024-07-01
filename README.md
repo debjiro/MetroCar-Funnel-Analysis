@@ -34,7 +34,8 @@ App downloads(downloads)  from the year 2021(23.6k)and download stream signups 
 ## Rating segmentation
 - 50.56% rated their experience with the metro car app as above average(4-5)while 39.2% rated the app as either 1 or 2
 ![](rating.png)
-We can interact with the report [here](https://public.tableau.com/views/MetroCarDashboard/MetroCarDashboard?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
+## We can interact with the report
+[here](https://public.tableau.com/views/MetroCarDashboard/MetroCarDashboard?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
 ## Key Takeaways
 - 1. Although there is a healthy conversion rate across platforms there is room for improvement which could be achieved by offering incentives to users and drivers based on performance.
 - 2. There's a notable drop-off between ride requests and driver acceptance, suggesting a need to recruit more trained drivers.
