@@ -38,7 +38,7 @@ App downloads(downloads)  from the year 2021(23.6k)and download stream signups 
 - 1. Although there is a healthy conversion rate across platforms there is room for improvement which could be achieved by offering incentives to users and drivers based on performance.
 - 2. There's a notable drop-off between ride requests and driver acceptance, suggesting a need to recruit more trained drivers.
 - 3. Our target demographics for the advert should be the 35-44 age group because they represent the working class and would commute often within the peak periods.
-- 4.  Implementing price surges within observed peak periods in the morning and evening would be an avenue to optimize profits.
+- 4. Implementing price surges within observed peak periods in the morning and evening would be an avenue to optimize profits.
 
 ## Future Analysis Ideas
 - Predominantly used vehicle type in metro car and location of use
