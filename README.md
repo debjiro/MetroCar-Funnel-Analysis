@@ -20,5 +20,5 @@ App downloads(downloads)  from the year 2021(23.6k)and download stream signups 
 ## Conversion Rates Across Age Range
 - Excluding the  Null and Unknown values, the 35-44 age group accounts for the majority of users while the 45-54 makes up the least.
 - Also conversion rates are relatively similar throughout the funnel for all age ranges
-![](conversion_rates_across_agerange.png)  
+![](conversion_rates_agerange.png)  
 
