@@ -27,7 +27,7 @@ App downloads(downloads)  from the year 2021(23.6k)and download stream signups 
 ![](revenue.png)
 ## Overall Drop-off Rates
 - About half of the users from driver-accept did not proceed to completed rides(-49.23%) drop-off
-![](drop_off.png)
+![](drop_off_rates.png)
 ## Hourly Ride Request 
 - Ride requests throughout the day depict 1st peak period between 8 am and 10 am  and the next peak period in the evening(16:00 - 20:00)hrs
  ![](hourly_ride_request.png) 
