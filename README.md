@@ -31,5 +31,7 @@ App downloads(downloads)  from the year 2021(23.6k)and download stream signups 
 ## Hourly Ride Request 
 - Ride requests throughout the day depict 1st peak period between 8 am and 10 am  and the next peak period in the evening(16:00 - 20:00)hrs
  ![](hourly_ride_request.png) 
-
+## Rating segmentation
+- 50.56% rated their experience with the metro car app as above average(4-5)while 39.2% rated the app as either 1 or 2
+![](rating.png)  
 
