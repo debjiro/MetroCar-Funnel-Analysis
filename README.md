@@ -7,4 +7,4 @@ Using the customer funnel analysis we would explore the journey of all our custo
 Understand the customer funnel and identify areas for improvement and optimization
 ## Data : 
 App downloads(downloads)  from the year 2021(23.6k)and download stream signups + rides through April  2022
-![](metrocar.png)
+![](customer_funnel.png)
