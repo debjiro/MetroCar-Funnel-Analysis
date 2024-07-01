@@ -9,8 +9,9 @@ Understand the customer funnel and identify areas for improvement and optimizati
 App downloads(downloads)  from the year 2021(23.6k)and download stream signups + rides through April  2022
 ![](customer_funnel.png)
 ## Overall Conversion Rates
--A significant amount (74.6%) of app downloads result in signups
--Similarly, 70.4 % of signed-up users end up requesting a ride
--Overall, 52% of app downloads result in ride_request
+- A significant amount (74.6%) of app downloads result in signups
+- Similarly, 70.4 % of signed-up users end up requesting a ride
+- Overall, 52% of app downloads result in ride_request
+![](overall_conversion_rates.png)
 
 
