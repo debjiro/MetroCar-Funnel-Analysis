@@ -13,5 +13,8 @@ App downloads(downloads)  from the year 2021(23.6k)and download stream signups 
 - Similarly, 70.4 % of signed-up users end up requesting a ride
 - Overall, 52% of app downloads result in ride_request
 ![](overall_conversion_rates.png)
-
+## Conversion Rates Across Platforms
+- Relatively similar conversion rates for the platforms across the funnel
+- However, the IOS platform has the highest volume of users based on the wide  funnel chart area
+![](conversion_rates_across_platform.png)  
 
