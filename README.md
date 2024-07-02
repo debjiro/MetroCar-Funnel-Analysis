@@ -386,21 +386,21 @@ FROM funnel_stages
 ## Hourly Ride Request: 
 - Ride requests throughout the day depicts 1st peak period between 8 am and 10 am  and the next peak period in the evening(16:00 - 20:00)hrs
   
-  ```sql
-  SELECT 
+```sql
+SELECT 
 EXTRACT(HOUR FROM rr.request_ts) hours,
 COUNT(rr.ride_id) number_of_ride_request
 FROM ride_requests rr
 GROUP BY EXTRACT(HOUR FROM rr.request_ts)
 ORDER BY hours
 ;
-  ```
+```
  ![](hourly_ride_request.png)
 
 ## Rating Segments:
 - 50.56% rated their experience with the metro car app as above average(4-5)while 39.2% rated the app as either 1 or 2
 
-  ```sql
+```sql
 SELECT
     CASE
         WHEN rating BETWEEN 1 AND 2 THEN '1-2 (Below Average)'
@@ -413,7 +413,7 @@ FROM reviews
 GROUP BY rating_description
 ORDER BY rating_description
 ;
-  ```
+ ```
 ![](rating.png)
 
 ## links to Tableau dashboard and Tableau Story
