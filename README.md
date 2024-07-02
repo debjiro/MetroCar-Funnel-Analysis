@@ -1,6 +1,6 @@
 # MetroCar-Funnel-Analysis
 ## Table of Contents
- 1.  [About Metrocar](#about-metrocar )
+ 1.  [About Metrocar:](#about-metrocar )
  2.  [Analysis Goal:](#analysis-goal)
  3.  [Tools:](#tools)
  4.  [Data:](#data)
