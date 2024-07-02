@@ -27,7 +27,337 @@ App downloads(downloads)  from the year 2021(23.6k)and download stream signups 
 ![](customer_funnel.png)
 ## Data Analysis
 ```sql
+WITH downloads AS ( 
 
+  SELECT
+
+    ad.app_download_key, 
+
+    ad.platform, 
+
+    ad.download_ts :: DATE 
+
+  FROM app_downloads ad 
+
+  GROUP BY ad.app_download_key, ad.platform, ad.download_ts 
+
+), 
+
+signedup_users AS ( 
+
+  SELECT 
+
+  s.user_id, 
+
+  s.age_range, 
+
+  s.session_id 
+
+  FROM signups s 
+
+  GROUP BY s.user_id, s.age_range, s.session_id  
+
+), 
+
+user_ride_requested AS ( 
+
+  SELECT  
+
+  	COUNT(DISTINCT rr.ride_id) num_req, 
+
+  	s.user_id 
+
+  FROM ride_requests rr 
+
+  JOIN signups s ON rr.user_id = s.user_id 
+
+WHERE rr.request_ts IS NOT NULL 
+
+  GROUP BY  s.user_id 
+
+),  
+
+driver_accepted AS ( 
+
+  SELECT 
+
+    COUNT(DISTINCT rr.ride_id) num_ac, 
+
+  	s.user_id 
+
+  FROM ride_requests rr 
+
+  JOIN signups s ON rr.user_id = s.user_id 
+
+  WHERE rr.accept_ts IS NOT NULL 
+
+  GROUP BY  s.user_id 
+
+), 
+
+user_ride_completed AS ( 
+
+  SELECT 
+
+    COUNT(DISTINCT rr.ride_id) num_com, 
+
+    s.user_id 
+
+   FROM ride_requests rr 
+
+  JOIN signups s ON rr.user_id = s.user_id 
+
+  WHERE rr.dropoff_ts IS NOT NULL 
+
+  GROUP BY  s.user_id 
+
+), 
+
+payment AS ( 
+
+  SELECT 
+
+  COUNT(DISTINCT tr.ride_id) num_tr, 
+
+  s.user_id 
+
+  FROM transactions tr 
+
+  LEFT JOIN ride_requests rr ON tr.ride_id = rr.ride_id 
+
+  LEFT JOIN signups s ON rr.user_id = s.user_id 
+
+  GROUP BY  s.user_id   
+
+), 
+
+review_users AS ( 
+
+  SELECT 
+
+    reu.user_id, 
+
+    COUNT(DISTINCT reu.ride_id) num_re 
+
+  FROM reviews reu 
+
+  GROUP BY reu.user_id  
+
+), 
+
+totals AS ( 
+
+  SELECT 
+
+  	dl.platform, 
+
+  	(dl.download_ts :: DATE) download_dt, 
+
+  	su.age_range, 
+
+  	COUNT(dl.app_download_key) AS total_users_downloaded, 
+
+        COUNT(su.user_id) AS total_users_signedup, 
+
+    	COUNT(urs.user_id) AS total_users_ride_requested, 
+
+        COUNT(drac.user_id) AS total_users_driver_accept, 
+
+        COUNT(urc.user_id) AS total_users_ride_completed, 
+
+        COUNT(pay.user_id) AS total_users_payment, 
+
+        COUNT(reu.user_id) AS total_users_review, 
+
+        SUM(urs.num_req) AS total_ride_requested, 
+
+        SUM(drac.num_ac) AS total_driver_accept, 
+
+        SUM(urc.num_com) AS total_ride_completed, 
+
+        SUM(pay.num_tr) AS total_ride_payment, 
+
+        SUM(reu.num_re) AS total_ride_review 
+
+  FROM   downloads dl 
+
+  LEFT JOIN  
+
+    signedup_users su ON dl.app_download_key = su.session_id 
+
+  LEFT JOIN  
+
+    user_ride_requested urs ON su.user_id = urs.user_id  
+
+  LEFT JOIN  
+
+    driver_accepted drac ON su.user_id = drac.user_id 
+
+  LEFT JOIN  
+
+    user_ride_completed urc ON su.user_id = urc.user_id 
+
+  LEFT JOIN  
+
+    payment pay ON su.user_id = pay.user_id 
+
+  LEFT JOIN  
+
+    review_users reu ON su.user_id = reu.user_id 
+
+  GROUP BY  dl.platform, dl.download_ts, su.age_range 
+
+), 
+
+funnel_stages AS ( 
+
+  SELECT  
+
+    0 AS funnel_step, 
+
+    'downloads' AS funnel_name, 
+
+     tot.platform, 
+
+     tot.age_range, 
+
+     tot.download_dt, 
+
+     total_users_downloaded AS user_count, 
+
+     CAST (NULL AS INT) AS ride_count 
+
+  FROM totals tot 
+
+  UNION 
+
+  SELECT 
+
+    1 AS funnel_step, 
+
+  	'signups' AS funnel_name, 
+
+  	tot.platform, 
+
+  	tot.age_range, 
+
+  	tot.download_dt, 
+
+  	total_users_signedup AS user_count, 
+
+   CAST (NULL AS INT) AS ride_count 
+
+  FROM totals tot 
+
+  UNION 
+
+  SELECT 
+
+    2 AS funnel_step, 
+
+    'ride_requested' AS funnel_name, 
+
+     tot.platform, 
+
+     tot.age_range, 
+
+     tot.download_dt, 
+
+     total_users_ride_requested AS user_count, 
+
+     total_ride_requested AS ride_count 
+
+  FROM totals tot 
+
+  UNION 
+
+  SELECT 
+
+    3 AS funnel_step, 
+
+    'driver_accept' AS funnel_name, 
+
+  	tot.platform, 
+
+  	tot.age_range, 
+
+  	tot.download_dt, 
+
+  	total_users_driver_accept AS user_count, 
+
+    total_driver_accept AS ride_count 
+
+  FROM totals tot 
+
+  UNION 
+
+  SELECT 
+
+    4 AS funnel_step, 
+
+    'completed_ride' AS funnel_name, 
+
+  	tot.platform, 
+
+  	tot.age_range, 
+
+  	tot.download_dt, 
+
+  	total_users_ride_completed AS user_count, 
+
+    total_ride_completed AS ride_count 
+
+  FROM  totals  tot 
+
+  UNION 
+
+  SELECT 
+
+    5 AS funnel_step, 
+
+    'payment' AS funnel_name, 
+
+     tot.platform, 
+
+     tot.age_range, 
+
+     tot.download_dt, 
+
+    total_users_payment AS user_count, 
+
+    total_ride_payment AS ride_count 
+
+  FROM totals tot 
+
+  UNION 
+
+  SELECT 
+
+    6 AS funnel_step, 
+
+    'reviews' AS funnel_name, 
+
+    tot.platform, 
+
+    tot.age_range, 
+
+   tot.download_dt, 
+
+   total_users_review AS user_count, 
+
+   total_ride_review AS ride_count 
+
+FROM  totals tot 
+
+) 
+
+SELECT  
+
+  * 
+
+FROM funnel_stages 
+
+;
 ```
 ## Overall Conversion Rates:
 - A significant amount (74.6%) of app downloads result in signups
