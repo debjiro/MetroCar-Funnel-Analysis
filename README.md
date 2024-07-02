@@ -383,7 +383,7 @@ FROM funnel_stages
 - About half of the users from driver-accept did not proceed to completed rides(-49.23%) drop-off
 ![](drop_off_rates.png)
 ## Hourly Ride Request: 
-- Ride requests throughout the day depict 1st peak period between 8 am and 10 am  and the next peak period in the evening(16:00 - 20:00)hrs
+- Ride requests throughout the day depicts 1st peak period between 8 am and 10 am  and the next peak period in the evening(16:00 - 20:00)hrs
  ![](hourly_ride_request.png) 
 ## Rating Segments:
 - 50.56% rated their experience with the metro car app as above average(4-5)while 39.2% rated the app as either 1 or 2
