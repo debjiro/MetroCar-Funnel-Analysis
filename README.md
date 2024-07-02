@@ -8,11 +8,12 @@
  6.  [Overall Conversion Rates:](#overall-conversion-rates)
  7.  [Conversion Rates Across Platforms:](#conversion-rates-across-platforms)
  8.  [Conversion Rates Across Age Range:](#conversion-rates-across-age-range)
- 9.  [Revenue Generated Across Platforms and Age range:](#)
- 10. [](#)
- 11. [](#)
- 12. [](#)
- 13. [](#)
+ 9.  [Revenue Generated Across Platforms and Age range:](#revenue-generated-across-platforms-and-age-range)
+ 10. [Overall Drop-off Rates:](#overall-drop-off-rates)
+ 11. [Hourly Ride Request:](#hourly-ride-requests)
+ 12. [Rating Segments:](#rating-segments)
+ 13. [Recommendations:](#recommendations)
+ 14. [Future Analysis Ideas::](#future-analysis-ideas)
 ![](metrocar.png)
 ## About Metrocar:
 Metro car operates within the ride-sharing industry by connecting passengers with drivers through its mobile app
@@ -379,21 +380,21 @@ FROM funnel_stages
 ## Overall Drop-off Rates:
 - About half of the users from driver-accept did not proceed to completed rides(-49.23%) drop-off
 ![](drop_off_rates.png)
-## Hourly Ride Request 
+## Hourly Ride Request: 
 - Ride requests throughout the day depict 1st peak period between 8 am and 10 am  and the next peak period in the evening(16:00 - 20:00)hrs
  ![](hourly_ride_request.png) 
-## Rating segmentation
+## Rating Segments:
 - 50.56% rated their experience with the metro car app as above average(4-5)while 39.2% rated the app as either 1 or 2
 ![](rating.png)
 ## We can interact with the dashboard [here](https://public.tableau.com/views/MetroCarDashboard/MetroCarDashboard?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
 ## We can access the Tableau Story[here](https://public.tableau.com/views/TableauStory-FunnelAnalysisMetroCar/TableauStory-FunnelAnalysisatMetroCar?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link) 
-## Key Takeaways
+## Recommendations:
 - 1. Although there is a healthy conversion rate across platforms there is room for improvement which could be achieved by offering incentives to users and drivers based on performance.
 - 2. There's a notable drop-off between ride requests and driver acceptance, suggesting a need to recruit more trained drivers.
 - 3. Our target demographics for the advert should be the 35-44 age group because they represent the working class and would commute often within the peak periods.
 - 4. Implementing price surges within observed peak periods in the morning and evening would be an avenue to optimize profits.
 
-## Future Analysis Ideas
+## Future Analysis Ideas:
 - Predominantly used vehicle type in metro car and location of use
 - Driver's age group and gender
 - Which mobile network connects the most passengers to metro drivers
