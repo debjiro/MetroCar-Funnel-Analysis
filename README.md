@@ -430,4 +430,4 @@ ORDER BY rating_description
 - Driver's age group and gender
 - Which mobile network connects the most passengers to metro drivers
 - Which advertising strategy is most effective in terms of accessing our target demographics
-![]()
+![](pngkey.com-thank-you-png-40716.png)
