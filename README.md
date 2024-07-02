@@ -14,6 +14,8 @@
  12. [Rating Segments:](#rating-segments)
  13. [Recommendations:](#recommendations)
  14. [Future Analysis Ideas::](#future-analysis-ideas)
+
+     
 ![](metrocar.png)
 ## About Metrocar:
 Metro car operates within the ride-sharing industry by connecting passengers with drivers through its mobile app
