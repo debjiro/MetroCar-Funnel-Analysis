@@ -13,7 +13,7 @@
  11. [Hourly Ride Request:](#hourly-ride-requests)
  12. [Rating Segments:](#rating-segments)
  13. [Recommendations:](#recommendations)
- 14. [Future Analysis Ideas::](#future-analysis-ideas)
+ 14. [Future Analysis Ideas:](#future-analysis-ideas)
 
      
 ![](metrocar.png)
@@ -389,7 +389,7 @@ FROM funnel_stages
 - 50.56% rated their experience with the metro car app as above average(4-5)while 39.2% rated the app as either 1 or 2
 ![](rating.png)
 ## We can interact with the dashboard [here](https://public.tableau.com/views/MetroCarDashboard/MetroCarDashboard?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
-## We can access the Tableau Story[here](https://public.tableau.com/views/TableauStory-FunnelAnalysisMetroCar/TableauStory-FunnelAnalysisatMetroCar?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link) 
+## We can access the Tableau Story [here](https://public.tableau.com/views/TableauStory-FunnelAnalysisMetroCar/TableauStory-FunnelAnalysisatMetroCar?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link) 
 ## Recommendations:
 - 1. Although there is a healthy conversion rate across platforms there is room for improvement which could be achieved by offering incentives to users and drivers based on performance.
 - 2. There's a notable drop-off between ride requests and driver acceptance, suggesting a need to recruit more trained drivers.
