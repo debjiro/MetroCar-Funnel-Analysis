@@ -1,4 +1,16 @@
 # MetroCar-Funnel-Analysis
+## Table of Contents
+ 1. [About Metrocar](#about-metrocar )
+ 2. [Analysis Goal](#analysis-goal)
+ 3. [Data](#data)
+ 4. [Overall Conversion Rates](#overall-conversion-rates)
+ 5. [](#)
+ 6. [](#)
+ 7. [](#)
+ 8. [](#)
+ 9. [](#)
+ 10. [](#)
+ 11. [](#)
 ![](metrocar.png)
 ## About Metrocar:
 Metro car operates within the ride-sharing industry by connecting passengers with drivers through its mobile app
