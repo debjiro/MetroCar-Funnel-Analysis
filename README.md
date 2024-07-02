@@ -382,8 +382,10 @@ FROM funnel_stages
 ## Overall Drop-off Rates:
 - About half of the users from driver-accept did not proceed to completed rides(-49.23%) drop-off
 ![](drop_off_rates.png)
+
 ## Hourly Ride Request: 
 - Ride requests throughout the day depicts 1st peak period between 8 am and 10 am  and the next peak period in the evening(16:00 - 20:00)hrs
+  
   ```sql
   SELECT 
 EXTRACT(HOUR FROM rr.request_ts) hours,
@@ -393,9 +395,11 @@ GROUP BY EXTRACT(HOUR FROM rr.request_ts)
 ORDER BY hours
 ;
   ```
- ![](hourly_ride_request.png) 
+ ![](hourly_ride_request.png)
+
 ## Rating Segments:
 - 50.56% rated their experience with the metro car app as above average(4-5)while 39.2% rated the app as either 1 or 2
+
   ```sql
 SELECT
     CASE
