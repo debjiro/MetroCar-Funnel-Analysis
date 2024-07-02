@@ -384,12 +384,37 @@ FROM funnel_stages
 ![](drop_off_rates.png)
 ## Hourly Ride Request: 
 - Ride requests throughout the day depicts 1st peak period between 8 am and 10 am  and the next peak period in the evening(16:00 - 20:00)hrs
+  ```sql
+  SELECT 
+EXTRACT(HOUR FROM rr.request_ts) hours,
+COUNT(rr.ride_id) number_of_ride_request
+FROM ride_requests rr
+GROUP BY EXTRACT(HOUR FROM rr.request_ts)
+ORDER BY hours
+;
+  ```
  ![](hourly_ride_request.png) 
 ## Rating Segments:
 - 50.56% rated their experience with the metro car app as above average(4-5)while 39.2% rated the app as either 1 or 2
+  ```sql
+SELECT
+    CASE
+        WHEN rating BETWEEN 1 AND 2 THEN '1-2 (Below Average)'
+        WHEN rating = 3 THEN '3 (Average)'
+        WHEN rating BETWEEN 4 AND 5 THEN '4-5 (Above Average)'
+        ELSE 'Unknown'
+    END AS rating_description,
+    COUNT(driver_id) AS driver_count
+FROM reviews
+GROUP BY rating_description
+ORDER BY rating_description
+;
+  ```
 ![](rating.png)
-## We can interact with the dashboard [here](https://public.tableau.com/views/MetroCarDashboard/MetroCarDashboard?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
-## We can access the Tableau Story [here](https://public.tableau.com/views/TableauStory-FunnelAnalysisMetroCar/TableauStory-FunnelAnalysisatMetroCar?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link) 
+
+## links to Tableau dashboard and Tableau Story
+- [Tableau Dashboard](https://public.tableau.com/views/MetroCarDashboard/MetroCarDashboard?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
+- [Tableau Story](https://public.tableau.com/views/TableauStory-FunnelAnalysisMetroCar/TableauStory-FunnelAnalysisatMetroCar?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link) 
 ## Recommendations:
 - 1. Although there is a healthy conversion rate across platforms there is room for improvement which could be achieved by offering incentives to users and drivers based on performance.
 - 2. There's a notable drop-off between ride requests and driver acceptance, suggesting a need to recruit more trained drivers.
