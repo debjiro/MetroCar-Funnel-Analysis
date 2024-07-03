@@ -12,8 +12,9 @@
  10. [Overall Drop-off Rates:](#overall-drop-off-rates)
  11. [Hourly Ride Request:](#hourly-ride-request)
  12. [Rating Segments:](#rating-segments)
- 13. [Recommendations:](#recommendations)
- 14. [Future Analysis Ideas:](#future-analysis-ideas)
+ 13. [links to Tableau dashboard and Tableau Story:](links-to-tableau-dashboard-and-tableau-story)
+ 14. [Recommendations:](#recommendations)
+ 15. [Future Analysis Ideas:](#future-analysis-ideas)
 
      
 ![](metrocar.png)
