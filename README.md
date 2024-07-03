@@ -12,7 +12,7 @@
  10. [Overall Drop-off Rates:](#overall-drop-off-rates)
  11. [Hourly Ride Request:](#hourly-ride-request)
  12. [Rating Segments:](#rating-segments)
- 13. [links to Tableau dashboard and Tableau Story:](#links-to-tableau-dashboard-and-tableau-story)
+ 13. [Links to Tableau dashboard and Tableau Story:](#links-to-tableau-dashboard-and-tableau-story)
  14. [Recommendations:](#recommendations)
  15. [Future Analysis Ideas:](#future-analysis-ideas)
 
@@ -417,7 +417,7 @@ ORDER BY rating_description
  ```
 ![](rating.png)
 
-## links to Tableau dashboard and Tableau Story
+## Links to Tableau dashboard and Tableau Story
 - [Tableau Dashboard](https://public.tableau.com/views/MetroCarDashboard/MetroCarDashboard?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link)
 - [Tableau Story](https://public.tableau.com/views/TableauStory-FunnelAnalysisMetroCar/TableauStory-FunnelAnalysisatMetroCar?:language=en-US&:sid=&:display_count=n&:origin=viz_share_link) 
 ## Recommendations:
